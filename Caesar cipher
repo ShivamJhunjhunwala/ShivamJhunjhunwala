@@ -26,3 +26,19 @@ for char in cipher:
     text += chr(code)
 
 print(text)
+
+
+# Caesar cipher. Encrypting a message with user defined value
+str = input("Enter your cryptogram: ")
+num = int(input("Enter a valid number between 1-25: "))
+text = ''
+for char in str:
+    if ord(char) == 32:
+        text += char
+    else:    
+        code = ord(char) + num
+        if code > ord('z'):
+            code = ord('a') + (ord(char) + num - 123)
+        text += chr(code)
+
+print(text)
